@@ -1,0 +1,14 @@
+{
+  "name": "aws-nodejs-set-s3-events",
+  "description": "A simple Node.js application which sets events on an S3 bucket.",
+  "version": "1.0.0",
+  "main": "set-s3-events-autogen.js",
+  "dependencies": {
+    "aws-sdk": "^2.610.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DCORP",
+  "license": "ISC"
+}

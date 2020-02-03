@@ -1,0 +1,16 @@
+{
+  "name": "aws-nodejs-create-thumbnail",
+  "description": "A Node.js application which resizes JPGs and PNGs to thumbnails.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^3.1.1",
+    "aws-sdk": "^2.610.0",
+    "sharp": "^0.24.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DCORP",
+  "license": "ISC"
+}
