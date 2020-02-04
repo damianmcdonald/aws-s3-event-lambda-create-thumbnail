@@ -5,9 +5,12 @@
 # This sample demonstrates the following concepts:           #
 #                                                            #
 # * S3 Bucket creation                                       #
-# * S3 Bucket upload                                         #
-# * Use of eksctl cli                                        #
-# * Creation and deployment of cluster autoscaler            #
+# * S3 Bucket object upload                                  #
+# * S3 Bucket object retrieval                               #
+# * IAM role creation                                        #
+# * IAM policy creation and attachment to role               #
+# * Lambda function creation                                 #
+# * Lambda function invocation                               #
 # * Cleans up all the resources created                      #
 #                                                            #
 ##############################################################
@@ -33,12 +36,10 @@ NC='\033[0m' # No Color
 
 # Global variable declarations
 PROJECT_DIR=$PWD
-AWS_PROFILE=dcorp
+AWS_PROFILE=<!-- ADD_YOUR_AWS_CLI_PROFILE_HERE -->
 AWS_REGION=$(aws configure get region --output text --profile ${AWS_PROFILE})
 AWS_ACCOUNT_ID=$(aws sts get-caller-identity --profile ${AWS_PROFILE} --query "Account" --output text)
 AWS_ACCOUNT_ARN=$(aws sts get-caller-identity --profile ${AWS_PROFILE} --query "Arn" --output text)
-IAM_CAPABILITIES=CAPABILITY_IAM
-STACK_NAME=s3-events-lambda
 S3_SOURCE_BUCKET=imagesourcedcorp${RANDOM}
 S3_RESIZED_BUCKET=${S3_SOURCE_BUCKET}-resized
 IMAGE_FILE_DIR=${PROJECT_DIR}/images
